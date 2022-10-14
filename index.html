@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JRWVIEW</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+            <div class="container">
+                <a class="navbar-brand" href="/">SENSOR DATA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-item nav-link" href="#flow">FLOW TRANSDUCER</a>
+                        <a class="nav-item nav-link" href="#level">LEVEL TRANSDUCER</a>
+                        <a class="nav-item nav-link" href="#temperature">TEMPERATURE TRANSDUCER</a>
+                        <a class="nav-item nav-link" href="#pressure">PRESSURE TRANSDUCER</a>
+                        <a class="nav-item nav-link" href="#post">POST YOUR DATA</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- HEADER END -->
+    
+
+    <div class="container">
+        <!-- FLOW TRANSDUCER -->
+        <p id="flow"></p>
+        <h1 class="display-4" align="center">FLOW TRANSDUCER</h1>
+        <hr>
+        <div class="row" id="flow-transducer"></div>
+        <br><br>
+        <center><button type="button" class="btn btn-outline-primary" onclick="getValueFT() ,successGetValueFT()">GET DATA</button><br><br>
+        <button type="button" class="btn btn-outline-success" onclick="startGetValueFT()">START REAL TIME GET DATA</button>
+        <button type="button" class="btn btn-outline-danger" onclick="stopGetValueFT()">STOP REAL TIME GET DATA</button></center>
+        <!-- FLOW TRANSDUCER END-->
+
+        <!-- LEVEL TRANSDUCER -->
+        <p id="level"></p>
+        <h1 class="display-4" align="center">LEVEL TRANSDUCER</h1>
+        <hr>
+        <div class="row" id="level-transducer"></div>
+        <br><br>
+        <center><button type="button" class="btn btn-outline-primary" onclick="getValueLT() ,successGetValueLT()">GET DATA</button><br><br>
+        <button type="button" class="btn btn-outline-success" onclick="startGetValueLT()">START REAL TIME GET DATA</button>
+        <button type="button" class="btn btn-outline-danger" onclick="stopGetValueLT()">STOP REAL TIME GET DATA</button></center>
+        <!-- LEVEL TRANSDUCER END-->
+    
+        <!-- TEMPERATURE TRANSDUCER -->
+        <p id="temperature"></p>
+        <h1 class="display-4" align="center">TEMPERATURE TRANSDUCER</h1>
+        <hr>
+        <div class="row" id="temperature-transducer"></div>
+        <br><br>
+        <center><button type="button" class="btn btn-outline-primary" onclick="getValueTT() ,successGetValueTT();">GET DATA</button><br><br>
+        <button type="button" class="btn btn-outline-success" onclick="startGetValueTT()">START REAL TIME GET DATA</button>
+        <button type="button" class="btn btn-outline-danger" onclick="stopGetValueTT()">STOP REAL TIME GET DATA</button></center>
+        <!-- TEMPERATURE TRANSDUCER END -->
+        
+        <!-- PRESSURE TRANSDUCER -->
+        <p id="pressure"></p>
+        <h1 class="display-4" align="center">PRESSURE TRANSDUCER</h1>
+        <hr>
+        <div class="row" id="pressure-transducer"></div>
+        <br><br>
+        <center><button type="button" class="btn btn-outline-primary" onclick="getValuePT() ,successGetValuePT()">GET DATA</button><br><br>
+        <button type="button" class="btn btn-outline-success" onclick="startGetValuePT()">START REAL TIME GET DATA</button>
+        <button type="button" class="btn btn-outline-danger" onclick="stopGetValuePT()">STOP REAL TIME GET DATA</button></center>
+        <!-- PRESSURE TRANSDUCER END -->
+        
+        <!-- POST YOUR DATA -->
+        <p id="post"></p>
+        <h1 class="display-4" align="center">POST YOUR DATA</h1>
+        <hr>
+        <form id="form" method="post">
+            <div class="form-group">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" align="right">STUDENT ID</label>
+                    <div class="col-sm-3">
+                        <div class="input-group sm-9">
+                            <span class="input-group-text" id="basic-addon1">
+                                <box-icon name='data'></box-icon>
+                            </span>
+                            <input type="text" class="form-control" id="st_id" placeholder="ENTER STUDENT ID">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" align="right">STUDENT NAME</label>
+                    <div class="col-sm-3">
+                        <div class="input-group sm-2">
+                            <span class="input-group-text" id="basic-addon1">
+                                <box-icon type='solid' name='user-detail'></box-icon>
+                            </span>
+                            <input type="text" class="form-control" id="st_name" placeholder="ENTER STUDENT NAME">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" align="right">SENSOR NAME</label>
+                    <div class="col-sm-3">
+                        <div class="input-group sm-2">
+                            <span class="input-group-text" id="basic-addon1">
+                                <box-icon name='sitemap'></box-icon>
+                            </span>
+                            <input type="text" class="form-control" id="sensor_name" placeholder="ENTER SENSOR NAME">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" align="right">SENSOR TYPE</label>
+                    <div class="col-sm-3">
+                        <div class="input-group sm-2">
+                            <span class="input-group-text" id="basic-addon1">
+                                <box-icon type='solid' name='component'></box-icon>
+                            </span>
+                            <input type="text" class="form-control" id="sensor_type" placeholder="ENTER SENSOR TYPE">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" align="right">SENSOR UNIT</label>
+                    <div class="col-sm-3">
+                        <div class="input-group sm-2">
+                            <span class="input-group-text" id="basic-addon1">
+                                <box-icon name='unite'></box-icon>
+                            </span>
+                            <input type="text" class="form-control" id="sensor_unit" placeholder="ENTER SENSOR UNIT">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" align="right">SENSOR VALUE MAX</label>
+                    <div class="col-sm-3">
+                        <div class="input-group sm-2">
+                            <span class="input-group-text" id="basic-addon1">
+                                <box-icon name='ruler' type='solid'></box-icon>
+                            </span>
+                            <input type="text" class="form-control" id="sensor_value_max" placeholder="ENTER SENSOR VALUE MAX">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                        </svg>
+                        SEND
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- POST YOUR DATA END -->
+
+        <!-- FOOTER -->
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" id="darkSwitch" />
+                <label class="custom-control-label" for="darkSwitch">DARK MODE</label>
+            </div>
+            <script src="js/dark-mode-switch.min.js"></script>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <button type="button" class="btn btn-dark" onclick="jrwview()">© 2022 JRWVIEW</button>
+            </ul>
+            <script>
+                function jrwview(){
+                    Swal.fire({
+                    icon: 'info',
+                    html: '<p1>NAME : JIRAWAT NIYOMSAUN</p1><br><p1>ID : 6301072510053</p1>'
+                    })
+                }
+            </script>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">BACK TO TOP</a></li>
+            </ul>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script type="text/javascript" src="/js/getdata.js"></script>
+    <script type="text/javascript" src="/js/updatedata.js"></script>
+    <script type="text/javascript" src="/js/postdata.js"></script>
+</body>
+</html>
