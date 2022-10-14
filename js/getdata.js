@@ -22,7 +22,7 @@ fetch(api_flow_transducer)
                             <div>`;
             document.querySelector('#flow-transducer').insertAdjacentHTML('beforeend',markup);
         }
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.log(error));
 
@@ -45,7 +45,7 @@ fetch(api_level_transducer)
                             <div>`;
             document.querySelector('#level-transducer').insertAdjacentHTML('beforeend',markup);
         }
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.log(error));
 
@@ -68,7 +68,7 @@ fetch(api_temperature_transducer)
                             <div>`;
             document.querySelector('#temperature-transducer').insertAdjacentHTML('beforeend',markup);
         }
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.log(error));
 
@@ -91,6 +91,6 @@ fetch(api_pressure_transducer)
                             <div>`;
             document.querySelector('#pressure-transducer').insertAdjacentHTML('beforeend',markup);
         }
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.log(error));

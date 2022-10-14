@@ -6,7 +6,7 @@ function getValueFT() {
             document.querySelector('#value_flow0').innerHTML = data[0]['value'];
             document.querySelector('#value_flow1').innerHTML = data[1]['value'];
             document.querySelector('#value_flow2').innerHTML = data[2]['value'];
-            console.log(data);
+            //console.log(data);
         })
 }
     
@@ -17,7 +17,7 @@ function getValueLT() {
             document.querySelector('#value_level0').innerHTML = data[0]['value'];
             document.querySelector('#value_level1').innerHTML = data[1]['value'];
             document.querySelector('#value_level2').innerHTML = data[2]['value'];
-            console.log(data);
+            //console.log(data);
         })
 }
 
@@ -28,7 +28,7 @@ function getValueTT() {
             document.querySelector('#value_temperature0').innerHTML = data[0]['value'];
             document.querySelector('#value_temperature1').innerHTML = data[1]['value'];
             document.querySelector('#value_temperature2').innerHTML = data[2]['value'];
-            console.log(data);
+            //console.log(data);
         })
 }
     
@@ -39,7 +39,7 @@ function getValuePT() {
             document.querySelector('#value_pressure0').innerHTML = data[0]['value'];
             document.querySelector('#value_pressure1').innerHTML = data[1]['value'];
             document.querySelector('#value_pressure2').innerHTML = data[2]['value'];
-            console.log(data);
+            //console.log(data);
         })
 }
 
