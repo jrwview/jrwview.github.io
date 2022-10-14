@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+body {
+    background-color: #eee;
+    font-family: 'Prompt', sans-serif;
+}
+
+p {
+    padding: 30px;
+}
+
+hr {
+    padding: 10px;
+}
+
+.display-4 {
+    font-weight: bolder;
+    padding: 35px;
+}
+
+[data-theme="dark"] {
+    background-color: rgb(40, 40, 40) !important;
+    color: #eee;
+}
